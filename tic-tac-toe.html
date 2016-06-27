@@ -18,13 +18,15 @@ var game = new Phaser.Game(900, 1000, Phaser.AUTO, '', { preload: preload, creat
 
 function preload() {
 
-
-    game.load.image('bored', 'assets/tic-tac-toe_bored.png', 0, 0);
+    game.load.image('X', 'assets/X_for_tic-tac-toe.png', 5, 10);
+    game.load.image('board', 'assets/tic-tac-toe_board.png', 0, 0);
 }
 
 function create() {
 
-	game.add.sprite(0, 0, 'bored');
+	game.add.sprite(0, 0, 'board');
+    for (i = 0; i <3 ; i++) {game.add.sprite(5 + (i*140), 10, 'X');}
+    
 }
 
 function update() {
